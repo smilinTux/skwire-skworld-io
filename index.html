@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>skwire — the universal bootstrapper · talk to it, heck yeah, it wires everything</title>
+  <meta name="description" content="skwire turns a set of descriptors into a wired-up stack: it mints every secret, connects every service (URLs, ports, API keys), rotates your keys, and asks 'want me to just do it?' — for humans and AI agents alike. Pure-stdlib, zero deps, embeddable, open source.">
+  <link rel="canonical" href="https://skwire.skworld.io/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <meta property="og:title" content="skwire — the universal bootstrapper">
+  <meta property="og:description" content="Talk to it, it asks a few questions, then 'want me to just do it?' — heck yeah — and it mints every secret, wires every connection, and keeps your keys rotated. Embeddable, open source.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skwire.skworld.io/">
+  <meta property="og:site_name" content="skwire · SKWorld">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://skwire.skworld.io/og.png">
+  <meta property="og:image:secure_url" content="https://skwire.skworld.io/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="skwire — the universal bootstrapper. Talk to it, heck yeah, it wires everything.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@smilinTux">
+  <meta name="twitter:title" content="skwire — the universal bootstrapper">
+  <meta name="twitter:description" content="Mint every secret, wire every connection, rotate your keys — talk to it and it just does it. Open source.">
+  <meta name="twitter:image" content="https://skwire.skworld.io/og.png">
+  <meta name="twitter:creator" content="@smilinTux">
+
+  <meta name="theme-color" content="#0a0a1a">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◈</text></svg>">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Organization","@id":"https://smilintux.github.io/#organization","name":"smilinTux","url":"https://smilintux.github.io","sameAs":["https://github.com/smilinTux"],"description":"Sovereign AI infrastructure — open, authentic, human-first. Home of the Pengu Empire."},
+    {"@type":"SoftwareApplication","name":"skwire","applicationCategory":"DeveloperApplication","operatingSystem":"Linux, macOS, Windows","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"The universal bootstrapper / wiring fabric: mint-then-inject service + agent wiring with a signed plan-approval handshake, key rotation, and a conversational installer. Pure-stdlib, embeddable, open source.","url":"https://skwire.skworld.io/","license":"https://opensource.org/licenses/MIT","author":{"@id":"https://smilintux.github.io/#organization"}}
+  ]}
+  </script>
+
+  <style>
+    :root{--accent:#22d3ee;--bg:#0a0a1a;--panel:#121821;--panel2:#1a2230;--text:#e6edf3;--muted:#8b98a8}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1100px 560px at 50% -8%, #16202e, var(--bg));color:var(--text);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif}
+    .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+    header{text-align:center;padding:90px 22px 40px}
+    .logo{font-size:60px}
+    h1{font-size:clamp(34px,6vw,56px);margin:6px 0 8px;letter-spacing:-.5px}
+    .tag{color:var(--muted);font-size:clamp(17px,2.6vw,22px);margin:0 auto;max-width:620px}
+    .accent{color:var(--accent)}
+    .cta{display:inline-flex;gap:8px;align-items:center;margin-top:26px;background:linear-gradient(135deg,var(--accent),#3b82f6);
+         color:#04121a;font-weight:700;padding:13px 22px;border-radius:13px;text-decoration:none}
+    .ghost{margin-left:10px;background:var(--panel2);color:var(--text);border:1px solid #ffffff1a}
+    section{padding:34px 0;border-top:1px solid #ffffff12}
+    h2{font-size:24px;margin:0 0 14px}
+    .arc{background:var(--panel);border:1px solid #ffffff12;border-radius:14px;padding:18px 20px;white-space:pre-wrap;
+         font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:#cbd5e1;overflow-x:auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .card{background:var(--panel);border:1px solid #ffffff12;border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14.5px}
+    code{background:var(--panel2);padding:2px 7px;border-radius:6px;font-size:14px}
+    pre{background:var(--panel);border:1px solid #ffffff12;border-radius:12px;padding:14px 16px;overflow-x:auto}
+    a{color:var(--accent)}
+    footer{text-align:center;color:var(--muted);padding:46px 22px;font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">◈</div>
+    <h1>skwire</h1>
+    <p class="tag">The universal bootstrapper. Talk to it, it asks a few questions, then
+      <span class="accent">“want me to just do it?”</span> — heck yeah — and it wires everything up.</p>
+    <a class="cta" href="https://github.com/smilinTux/skstacks/tree/main/v2/skwire">Get skwire →</a>
+    <a class="cta ghost" href="https://github.com/smilinTux/skwire-catalog">The catalog</a>
+  </header>
+
+  <div class="wrap">
+    <section>
+      <h2>The pain it kills</h2>
+      <p>Self-hosting means hand-minting API keys, copy-pasting them into five config files, wiring
+      every service to every other, and never remembering which key goes where when it's time to rotate.
+      <strong>skwire makes all of that vanish.</strong> It owns the wire graph — so it mints every secret
+      up front, injects each into everyone who needs it, and rotates a key <em>across the whole vertical</em>
+      in one call.</p>
+    </section>
+
+    <section>
+      <h2>The whole flow</h2>
+      <div class="arc">scan your env  →  build the plan  →  "I'll set up X, wire Y… want me to just do it?"
+   →  heck yeah  →  MINT every secret  →  INJECT into provider + every consumer  →  wired
+   →  🔑 "auto-rotate that key every 90 days — want me to schedule it?"</div>
+    </section>
+
+    <section>
+      <h2>What you get</h2>
+      <div class="grid">
+        <div class="card"><h3>🔐 Mint-then-inject</h3><p>Every secret generated up front, injected pre-boot, cross-service config pushed via each app's API. Zero manual wiring.</p></div>
+        <div class="card"><h3>🔁 Rotate the vertical</h3><p>One call re-mints a key and re-injects it everywhere it's used. Schedule rotations from each secret's policy.</p></div>
+        <div class="card"><h3>💬 Slick chat window</h3><p><code>skwire serve</code> — a branded, white-label chat UI. No terminal. Greets you, scans, shows the plan, you click “Heck yeah”.</p></div>
+        <div class="card"><h3>🛍️ App-store catalog</h3><p>Best-of-breed open source — servers and desktop apps. The AI lists + recommends. Install, use, then fork your own.</p></div>
+        <div class="card"><h3>🧩 Embeddable + forkable</h3><p>Pure-stdlib core, zero deps, cross-platform. <code>import skwire</code> in any project; ship your own pack. Roll your own.</p></div>
+        <div class="card"><h3>🤝 Trust both ways</h3><p>A signed plan-hash both you and the machine trust — the AI can't deviate from what you approved.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Try it</h2>
+      <pre>pip install skwire        # zero deps, cross-platform
+skwire scan               # "mind if I take a look at your env?"
+skwire catalog            # browse best-of-breed open source
+skwire serve              # the slick chat window — no terminal</pre>
+    </section>
+
+    <section>
+      <h2>Open at every edge</h2>
+      <p>The engine is open. The catalog is a <a href="https://github.com/smilinTux/skwire-catalog">separate repo</a>
+      — adding an app is a PR to a JSON file. Publish your own pack (<code>pip</code> + an entry point), host your
+      own catalog, or take the whole thing and roll your own. No lock-in, ever.</p>
+    </section>
+  </div>
+
+  <footer>◈ skwire · part of <a href="https://skworld.io">SKWorld</a> · built in the open by
+    <a href="https://github.com/smilinTux">smilinTux</a> 🐧</footer>
+</body>
+</html>

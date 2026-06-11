@@ -1,0 +1,13 @@
+# skwire
+
+> The universal bootstrapper / wiring fabric. Talk to it, it asks a few questions, then "want me to just do it?" — heck yeah — and it mints every secret, wires every connection, and keeps your keys rotated. For humans and AI agents alike.
+
+skwire turns descriptors (what each thing provides + needs) into a Plan, mints every secret up front, injects them, pushes cross-service config, and brokers a hash-bound approval. Pure-stdlib core, zero deps, cross-platform, embeddable in any project. Ships a slick branded chat window (no terminal) and an app-store catalog of best-of-breed open source — install, use, then have the AI help you contribute or fork your own.
+
+## Links
+- [Live site](https://skwire.skworld.io)
+- [Engine (in SKStacks v2)](https://github.com/smilinTux/skstacks/tree/main/v2/skwire)
+- [Community catalog](https://github.com/smilinTux/skwire-catalog)
+
+## About smilinTux
+Sovereign AI infrastructure — open, authentic, human-first. Home of the Pengu Empire.
